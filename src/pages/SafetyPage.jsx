@@ -56,22 +56,22 @@ export default function SafetyPage() {
         </div>
       </div>
 
-      {/* Safety Commitment Banner */}
-      <section style={{ background: 'var(--color-primary)', padding: '28px 0' }}>
-        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 32, flexWrap: 'wrap' }}>
-          {['FMCSA Compliant', 'ELD Equipped', 'DOT Certified', 'Insured & Bonded'].map(badge => (
-            <div key={badge} style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#fff', fontSize: '0.85rem', fontWeight: 700 }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ width: 16, height: 16 }}><polyline points="20 6 9 17 4 12"/></svg>
-              {badge}
-            </div>
-          ))}
+      <section className="safety-badge-bar">
+        <div className="container">
+          <div className="safety-badge-row">
+            {['FMCSA Compliant', 'ELD Equipped', 'DOT Certified', 'Insured & Bonded'].map(badge => (
+              <div key={badge} className="safety-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                {badge}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Safety Pillars */}
       <section className="safety-section">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 540, margin: '0 auto 48px' }}>
+          <div className="section-intro">
             <span className="section-kicker">OUR SAFETY PILLARS</span>
             <h2 className="section-title">How We Keep Every Load Safe</h2>
           </div>
@@ -89,17 +89,16 @@ export default function SafetyPage() {
         </div>
       </section>
 
-      {/* Programs */}
-      <section style={{ padding: '72px 0', background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-200)' }}>
+      <section className="page-section page-section--white" style={{ borderTop: '1px solid var(--color-gray-200)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+          <div className="cards-grid-2">
             <div>
               <span className="section-kicker">SAFETY PROGRAMS</span>
               <h2 className="section-title">Structured Programs for Consistent Safety</h2>
               <p className="section-subtitle">We don't leave safety to chance. Our structured programs ensure every driver, load, and trip meets the highest standards.</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              <div className="program-list">
                 {programs.map(({ title, desc }) => (
-                  <div key={title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                  <div key={title} className="program-item">
                     <div style={{ width: 36, height: 36, background: 'rgba(229,27,36,0.1)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
                       <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, stroke: 'var(--color-primary)', fill: 'none', strokeWidth: 2 }}><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
@@ -111,7 +110,7 @@ export default function SafetyPage() {
                 ))}
               </div>
             </div>
-            <div style={{ background: 'var(--color-navy-950)', borderRadius: 'var(--radius-lg)', padding: 40, color: 'var(--color-white)' }}>
+            <div className="commitment-card">
               <div style={{ fontSize: '3rem', marginBottom: 16 }}>🛡️</div>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', fontWeight: 800, marginBottom: 12 }}>Our Safety Commitment</h3>
               <p style={{ color: 'var(--color-gray-300)', fontSize: '0.9rem', lineHeight: 1.65, marginBottom: 20 }}>
@@ -125,15 +124,14 @@ export default function SafetyPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: '72px 0', background: 'var(--color-gray-50)', borderTop: '1px solid var(--color-gray-200)', textAlign: 'center' }}>
+      <section className="page-section page-section--gray" style={{ textAlign: 'center' }}>
         <div className="container">
           <span className="section-kicker">SHIP WITH CONFIDENCE</span>
           <h2 className="section-title">Your Freight is in Safe Hands</h2>
           <p style={{ color: 'var(--color-gray-600)', maxWidth: 480, margin: '0 auto 32px' }}>
             Work with a carrier that takes compliance and safety as seriously as you do.
           </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-actions">
             <Link to="/contact" className="btn btn-primary">Get a Quote →</Link>
             <Link to="/equipment" className="btn btn-dark">View Our Fleet</Link>
           </div>

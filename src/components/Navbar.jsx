@@ -1,15 +1,25 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
 
   const navLinks = [
     { to: '/', label: 'Home' },
@@ -58,7 +68,7 @@ export default function Navbar() {
         </Link>
 
         <button
-          className="mobile-toggle"
+          className={`mobile-toggle${mobileOpen ? ' is-open' : ''}`}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(o => !o)}

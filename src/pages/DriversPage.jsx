@@ -45,19 +45,18 @@ const requirements = [
 export default function DriversPage() {
   return (
     <>
-      {/* Hero with truck bg */}
-      <div style={{ position: 'relative', background: 'var(--color-navy-950)', padding: '120px 0 72px', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0 }}>
-          <img src="/images/driver-truck.jpg" alt="Royal Express Driver" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(4,9,20,0.96) 0%, rgba(4,9,20,0.75) 55%, rgba(4,9,20,0.3) 100%)' }} />
+      <div className="drivers-page-hero">
+        <div className="drivers-page-hero-bg">
+          <img src="/images/driver-truck.jpg" alt="Royal Express Driver" />
+          <div className="drivers-page-hero-overlay" />
         </div>
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="container drivers-page-hero-inner">
           <div className="page-hero-breadcrumb">
             <Link to="/">Home</Link><span>/</span><span>Drivers</span>
           </div>
           <span className="section-kicker">JOIN OUR TEAM</span>
-          <h1 className="section-title" style={{ color: 'var(--color-white)', maxWidth: 560 }}>Drive with Royal Express LLC</h1>
-          <p style={{ color: 'var(--color-gray-300)', fontSize: '1.05rem', maxWidth: 520, lineHeight: 1.65, marginBottom: 32 }}>
+          <h1 className="section-title">Drive with Royal Express LLC</h1>
+          <p className="drivers-page-hero-desc">
             We're looking for experienced, professional drivers who take pride in safety, on-time delivery, and representing Royal Express with excellence.
           </p>
           <a href="#apply" className="btn btn-primary" style={{ fontSize: '1rem', padding: '14px 28px' }}>
@@ -66,10 +65,9 @@ export default function DriversPage() {
         </div>
       </div>
 
-      {/* Perks */}
-      <section style={{ padding: '72px 0', background: 'var(--color-white)' }}>
+      <section className="page-section page-section--white">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto 48px' }}>
+          <div className="section-intro">
             <span className="section-kicker">DRIVER BENEFITS</span>
             <h2 className="section-title">Why Drivers Choose Royal Express</h2>
           </div>
@@ -89,18 +87,17 @@ export default function DriversPage() {
         </div>
       </section>
 
-      {/* Requirements */}
-      <section style={{ padding: '72px 0', background: 'var(--color-gray-50)', borderTop: '1px solid var(--color-gray-200)' }}>
+      <section className="page-section page-section--gray">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+          <div className="cards-grid-2">
             <div>
               <span className="section-kicker">REQUIREMENTS</span>
               <h2 className="section-title">What We're Looking For</h2>
               <p className="section-subtitle">We hire experienced professionals who prioritize safety, reliability, and pride in their work.</p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <ul className="req-list">
                 {requirements.map(r => (
-                  <li key={r} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: '0.9rem', color: 'var(--color-gray-700)' }}>
-                    <span style={{ width: 22, height: 22, background: 'var(--color-primary)', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <li key={r}>
+                    <span className="feature-check" style={{ width: 22, height: 22 }}>
                       <svg viewBox="0 0 24 24" style={{ width: 12, height: 12 }}><polyline points="20 6 9 17 4 12" stroke="#fff" strokeWidth="3" fill="none"/></svg>
                     </span>
                     {r}
@@ -108,9 +105,9 @@ export default function DriversPage() {
                 ))}
               </ul>
             </div>
-            <div style={{ background: 'var(--color-navy-950)', borderRadius: 'var(--radius-lg)', padding: 36, boxShadow: 'var(--shadow-lg)' }}>
+            <div className="quick-stats-card">
               <span className="section-kicker">QUICK STATS</span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 16 }}>
+              <div className="quick-stats-list">
                 {[
                   { label: 'Pay Model', value: 'Per Mile + Bonuses' },
                   { label: 'Home Time', value: 'Flexible scheduling' },
@@ -119,7 +116,7 @@ export default function DriversPage() {
                   { label: 'Equipment', value: 'Kenworth T680' },
                   { label: 'Coverage', value: '48 Contiguous States' },
                 ].map(({ label, value }) => (
-                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16 }}>
+                  <div key={label} className="quick-stats-row">
                     <span style={{ fontSize: '0.82rem', color: 'var(--color-gray-400)' }}>{label}</span>
                     <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-white)' }}>{value}</span>
                   </div>
@@ -130,16 +127,15 @@ export default function DriversPage() {
         </div>
       </section>
 
-      {/* Apply CTA */}
       <section id="apply" className="apply-cta-section">
         <div className="container">
           <div className="apply-cta-inner">
             <span className="section-kicker">APPLY NOW</span>
-            <h2 className="section-title" style={{ color: 'var(--color-white)', marginBottom: 12 }}>Ready to Join the Team?</h2>
-            <p style={{ color: 'var(--color-gray-400)', marginBottom: 32 }}>
+            <h2 className="section-title text-white" style={{ marginBottom: 12 }}>Ready to Join the Team?</h2>
+            <p className="cta-copy">
               Reach out directly — call or email us with your CDL info and experience, and we'll get back to you quickly.
             </p>
-            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="cta-actions">
               <a href="tel:6824073621" className="btn btn-primary" style={{ fontSize: '1rem' }}>
                 <svg className="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Call (682) 407-3621

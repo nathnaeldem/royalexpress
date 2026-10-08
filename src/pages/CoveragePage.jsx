@@ -32,31 +32,29 @@ export default function CoveragePage() {
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <section style={{ background: 'var(--color-navy-900)', padding: '28px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="coverage-stats-bar">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+          <div className="coverage-stats-grid">
             {stats.map(({ num, label }) => (
-              <div key={label} style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.4rem', fontWeight: 900, color: 'var(--color-primary)', lineHeight: 1 }}>{num}</div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--color-gray-400)', letterSpacing: '0.08em', marginTop: 4 }}>{label}</div>
+              <div key={label} className="coverage-stat">
+                <div className="coverage-stat-num">{num}</div>
+                <div className="coverage-stat-label">{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Full Coverage Map */}
       <section className="coverage-full-map">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto 36px' }}>
+          <div className="section-intro--sm">
             <span className="section-kicker">INTERACTIVE COVERAGE MAP</span>
             <h2 className="section-title">Our Nationwide Network</h2>
             <p className="section-subtitle">Our Silver Spring, MD headquarters anchors routes across the entire continental U.S.</p>
           </div>
-          <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-gray-200)', borderRadius: 'var(--radius-lg)', padding: 24, boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/royal-coverage-map.svg" alt="Royal Express Nationwide Coverage Map" style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block' }} />
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 28, marginTop: 16, flexWrap: 'wrap', fontSize: '0.78rem', color: 'var(--color-gray-500)' }}>
+          <div className="map-panel">
+            <img src="/images/royal-coverage-map.svg" alt="Royal Express Nationwide Coverage Map" className="map-panel-img" />
+            <div className="map-panel-legend">
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ width: 12, height: 12, background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 6px rgba(229,27,36,0.8)', display: 'inline-block' }} />
                 <span>Headquarters — Silver Spring, MD</span>
@@ -71,17 +69,16 @@ export default function CoveragePage() {
         </div>
       </section>
 
-      {/* Lanes Grid */}
-      <section style={{ padding: '72px 0', background: 'var(--color-white)' }}>
+      <section className="page-section page-section--white">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto 40px' }}>
+          <div className="section-intro--sm">
             <span className="section-kicker">FREIGHT LANES</span>
             <h2 className="section-title">Our Core Service Regions</h2>
           </div>
           <div className="lanes-grid">
-            {lanes.map(({ region, states, desc, color }) => (
+            {lanes.map(({ region, states, desc, color }, index) => (
               <div key={region} className="lane-card">
-                <div className="lane-num" style={{ color }}>{lanes.indexOf({ region, states, desc, color }) + 1 < 10 ? `0${lanes.findIndex(l => l.region === region) + 1}` : lanes.findIndex(l => l.region === region) + 1}</div>
+                <div className="lane-num" style={{ color }}>{String(index + 1).padStart(2, '0')}</div>
                 <div>
                   <div className="lane-title">{region}</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--color-primary)', fontWeight: 700, marginBottom: 6, letterSpacing: '0.05em' }}>{states}</div>
@@ -93,15 +90,14 @@ export default function CoveragePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: '72px 0', background: 'var(--color-navy-950)', textAlign: 'center' }}>
+      <section className="page-section page-section--navy">
         <div className="container">
           <span className="section-kicker">SHIP WITH US</span>
-          <h2 className="section-title" style={{ color: 'var(--color-white)' }}>Need Freight Moved in These Lanes?</h2>
-          <p style={{ color: 'var(--color-gray-400)', maxWidth: 480, margin: '0 auto 32px' }}>
+          <h2 className="section-title text-white">Need Freight Moved in These Lanes?</h2>
+          <p className="cta-copy">
             Get a fast quote from our dispatch team — we cover your region.
           </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-actions">
             <Link to="/contact" className="btn btn-primary">Request a Quote →</Link>
             <a href="tel:6824073621" className="btn btn-outline">Call (682) 407-3621</a>
           </div>

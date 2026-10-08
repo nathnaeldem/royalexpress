@@ -32,14 +32,13 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Mission Statement */}
-      <section style={{ padding: '72px 0', background: 'var(--color-white)' }}>
+      <section className="page-section page-section--white">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-            <div>
-              <img src="/images/hero-truck.jpg" alt="Royal Express Fleet" style={{ width: '100%', height: 380, objectFit: 'cover', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+          <div className="split-row">
+            <div className="split-media">
+              <img src="/images/hero-truck.jpg" alt="Royal Express Fleet" className="split-media-img split-media-img--tall" />
             </div>
-            <div>
+            <div className="split-content">
               <span className="section-kicker">WHO WE ARE</span>
               <h2 className="section-title">A Carrier You Can Count On</h2>
               <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-600)', lineHeight: 1.7, marginBottom: 20 }}>
@@ -48,11 +47,11 @@ export default function AboutPage() {
               <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-600)', lineHeight: 1.7, marginBottom: 28 }}>
                 We operate 53' refrigerated trailers out of our Silver Spring, MD headquarters, with strong freight lanes across the East Coast, Texas, and the Midwest. Our team is small by design — which means every customer and every driver gets real attention, not just a ticket number.
               </p>
-              <div style={{ display: 'flex', gap: 32 }}>
+              <div className="about-stats">
                 {[{ num: '48+', label: 'States Served' }, { num: '5+', label: 'Years Operating' }, { num: '24/7', label: 'Dispatch' }].map(({ num, label }) => (
                   <div key={label}>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: 900, color: 'var(--color-primary)' }}>{num}</div>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-gray-500)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{label}</div>
+                    <div className="about-stat-num">{num}</div>
+                    <div className="about-stat-label">{label}</div>
                   </div>
                 ))}
               </div>
@@ -61,10 +60,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Values */}
-      <section style={{ padding: '72px 0', background: 'var(--color-gray-50)', borderTop: '1px solid var(--color-gray-200)' }}>
+      <section className="page-section page-section--gray">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto 40px' }}>
+          <div className="section-intro--sm">
             <span className="section-kicker">CORE VALUES</span>
             <h2 className="section-title">What We Stand For</h2>
           </div>
@@ -80,21 +78,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section style={{ padding: '72px 0', background: 'var(--color-white)' }}>
+      <section className="page-section page-section--white">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto 48px' }}>
+          <div className="section-intro">
             <span className="section-kicker">OUR JOURNEY</span>
             <h2 className="section-title">How We Got Here</h2>
           </div>
-          <div style={{ maxWidth: 720, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 0 }}>
+          <div className="timeline">
             {milestones.map(({ year, event }, i) => (
-              <div key={year} style={{ display: 'flex', gap: 28, alignItems: 'flex-start' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--color-navy-950)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)', fontWeight: 900, fontSize: '0.8rem', border: '2px solid var(--color-primary)', flexShrink: 0 }}>{year}</div>
-                  {i < milestones.length - 1 && <div style={{ width: 2, flex: 1, background: 'var(--color-gray-200)', minHeight: 36, margin: '4px 0' }} />}
+              <div key={year} className="timeline-item">
+                <div className="timeline-marker">
+                  <div className="timeline-year">{year}</div>
+                  {i < milestones.length - 1 && <div className="timeline-line" />}
                 </div>
-                <div style={{ paddingBottom: 32, paddingTop: 12 }}>
+                <div className="timeline-body">
                   <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-700)', lineHeight: 1.6 }}>{event}</p>
                 </div>
               </div>
@@ -103,15 +100,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: '72px 0', background: 'var(--color-navy-950)', textAlign: 'center' }}>
+      <section className="page-section page-section--navy">
         <div className="container">
           <span className="section-kicker">WORK WITH US</span>
-          <h2 className="section-title" style={{ color: 'var(--color-white)' }}>Let's Move Freight Together</h2>
-          <p style={{ color: 'var(--color-gray-400)', maxWidth: 480, margin: '0 auto 32px' }}>
+          <h2 className="section-title text-white">Let's Move Freight Together</h2>
+          <p className="cta-copy">
             Whether you need a carrier or want to join our team — we'd love to connect.
           </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-actions">
             <Link to="/contact" className="btn btn-primary">Request a Quote →</Link>
             <Link to="/drivers" className="btn btn-outline">Driver Opportunities</Link>
           </div>

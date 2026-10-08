@@ -17,10 +17,9 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <section style={{ padding: '72px 0', background: 'var(--color-white)' }}>
+      <section className="page-section page-section--white">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 56, alignItems: 'flex-start' }}>
-            {/* Contact Info Column */}
+          <div className="contact-layout">
             <div>
               <span className="section-kicker">CONTACT INFO</span>
               <h2 className="section-title">Talk to Our Team</h2>
@@ -28,7 +27,7 @@ export default function ContactPage() {
                 Whether you're a shipper looking for capacity or a driver interested in joining our team — we'd love to hear from you.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <div className="contact-info-list">
                 {[
                   {
                     icon: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/>,
@@ -49,14 +48,14 @@ export default function ContactPage() {
                     href: null,
                   },
                 ].map(({ icon, label, value, href }) => (
-                  <div key={label} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                    <div style={{ width: 44, height: 44, background: 'rgba(229,27,36,0.08)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.8" style={{ width: 20, height: 20 }}>{icon}</svg>
+                  <div key={label} className="contact-info-item">
+                    <div className="contact-info-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.8">{icon}</svg>
                     </div>
                     <div>
                       <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-gray-500)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 2 }}>{label}</div>
                       {href
-                        ? <a href={href} style={{ fontWeight: 700, color: 'var(--color-navy-950)', fontSize: '0.95rem', transition: 'color 0.15s' }} onMouseOver={e => e.target.style.color = 'var(--color-primary)'} onMouseOut={e => e.target.style.color = 'var(--color-navy-950)'}>{value}</a>
+                        ? <a href={href} style={{ fontWeight: 700, color: 'var(--color-navy-950)', fontSize: '0.95rem', wordBreak: 'break-word' }}>{value}</a>
                         : <span style={{ fontWeight: 600, color: 'var(--color-navy-950)', fontSize: '0.9rem' }}>{value}</span>
                       }
                     </div>
@@ -64,15 +63,14 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Hours */}
-              <div style={{ marginTop: 36, background: 'var(--color-gray-50)', borderRadius: 'var(--radius-md)', padding: 24, border: '1px solid var(--color-gray-200)' }}>
+              <div className="hours-card">
                 <div style={{ fontWeight: 800, color: 'var(--color-navy-950)', marginBottom: 12, fontSize: '0.9rem' }}>Dispatch Hours</div>
                 {[
                   ['Monday – Friday', '6:00 AM – 9:00 PM'],
                   ['Saturday', '7:00 AM – 5:00 PM'],
                   ['Sunday / Holidays', 'On-call for active loads'],
                 ].map(([day, hours]) => (
-                  <div key={day} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid var(--color-gray-200)', fontSize: '0.83rem' }}>
+                  <div key={day} className="hours-row">
                     <span style={{ color: 'var(--color-gray-600)' }}>{day}</span>
                     <span style={{ fontWeight: 700, color: 'var(--color-navy-950)' }}>{hours}</span>
                   </div>
@@ -80,7 +78,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Quote Form */}
             <div>
               <div className="quote-card">
                 <div className="quote-header">

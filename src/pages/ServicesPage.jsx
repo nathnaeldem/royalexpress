@@ -31,7 +31,6 @@ const whyUs = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Page Hero */}
       <div className="page-hero">
         <div className="container page-hero-content">
           <div className="page-hero-breadcrumb">
@@ -45,29 +44,22 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Services Detail */}
-      <section style={{ padding: '72px 0', background: 'var(--color-white)' }}>
+      <section className="page-section page-section--white">
         <div className="container">
           {services.map(({ img, title, desc, features }, i) => (
-            <div key={title} style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 56,
-              alignItems: 'center',
-              marginBottom: i < services.length - 1 ? 80 : 0,
-            }}>
-              <div style={{ order: i % 2 === 1 ? 2 : 0 }}>
-                <img src={img} alt={title} style={{ width: '100%', height: 340, objectFit: 'cover', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+            <div key={title} className={`split-row${i % 2 === 1 ? ' is-reversed' : ''}`}>
+              <div className="split-media">
+                <img src={img} alt={title} className="split-media-img" />
               </div>
-              <div style={{ order: i % 2 === 1 ? 1 : 0 }}>
+              <div className="split-content">
                 <span className="section-kicker">SERVICE {String(i + 1).padStart(2, '0')}</span>
                 <h2 className="section-title">{title}</h2>
                 <p className="section-subtitle">{desc}</p>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
+                <ul className="feature-list">
                   {features.map(f => (
-                    <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.88rem', color: 'var(--color-gray-700)' }}>
-                      <span style={{ width: 20, height: 20, background: 'var(--color-primary)', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        <svg viewBox="0 0 24 24" style={{ width: 10, height: 10 }}><polyline points="20 6 9 17 4 12" stroke="#fff" strokeWidth="3" fill="none"/></svg>
+                    <li key={f}>
+                      <span className="feature-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" stroke="#fff" strokeWidth="3" fill="none"/></svg>
                       </span>
                       {f}
                     </li>
@@ -80,14 +72,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section style={{ padding: '72px 0', background: 'var(--color-gray-50)', borderTop: '1px solid var(--color-gray-200)' }}>
+      <section className="page-section page-section--gray">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 48px' }}>
+          <div className="section-intro">
             <span className="section-kicker">WHY ROYAL EXPRESS</span>
             <h2 className="section-title">The Royal Express Difference</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+          <div className="cards-grid-4">
             {whyUs.map(({ icon, title, desc }) => (
               <div key={title} className="safety-card" style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '2.2rem', marginBottom: 14 }}>{icon}</div>
@@ -99,15 +90,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: '72px 0', background: 'var(--color-navy-950)', textAlign: 'center' }}>
+      <section className="page-section page-section--navy">
         <div className="container">
           <span className="section-kicker">READY TO SHIP?</span>
-          <h2 className="section-title" style={{ color: 'var(--color-white)' }}>Let's Move Your Freight</h2>
-          <p style={{ color: 'var(--color-gray-400)', marginBottom: 32, maxWidth: 480, margin: '0 auto 32px' }}>
+          <h2 className="section-title text-white">Let's Move Your Freight</h2>
+          <p className="cta-copy">
             Contact our dispatch team for a fast, accurate freight quote.
           </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-actions">
             <Link to="/contact" className="btn btn-primary">Get a Quote →</Link>
             <a href="tel:6824073621" className="btn btn-outline">Call (682) 407-3621</a>
           </div>
