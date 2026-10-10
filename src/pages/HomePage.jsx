@@ -12,7 +12,7 @@ export default function HomePage() {
         </div>
         <div className="container">
           <div className="hero-content">
-            <span className="hero-badge">Royal Express LLC — Established 2020</span>
+            <span className="hero-badge">Royal Express LLC — Established 2022</span>
             <h1 className="hero-title">
               Refrigerated<br />
               Freight.<br />

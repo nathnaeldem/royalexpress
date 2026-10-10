@@ -8,12 +8,11 @@ const values = [
 ]
 
 const milestones = [
-  { year: '2020', event: 'Royal Express LLC founded in Silver Spring, MD with a single truck and a vision.' },
-  { year: '2021', event: 'Expanded fleet to 3 units — adding refrigerated reefer trailers and growing our East Coast lane presence.' },
-  { year: '2022', event: 'Entered Texas and Gulf Coast freight markets. Began partnerships with regional produce shippers.' },
-  { year: '2023', event: 'Expanded dispatch operations to 24/7 coverage. Added Midwest and Great Lakes freight lanes.' },
-  { year: '2024', event: 'Fleet modernization with new Kenworth T680 tractors and upgraded Thermo King refrigeration units.' },
-  { year: '2025', event: 'Now operating across all 48 contiguous states with a growing, professional team of drivers.' },
+  { year: '2022', event: 'Royal Express LLC founded in Silver Spring, MD with a single truck and a vision.' },
+  { year: '2023', event: 'Expanded fleet to 3 units — adding refrigerated reefer trailers and growing our East Coast lane presence.' },
+  { year: '2024', event: 'Entered Texas and Gulf Coast freight markets. Began partnerships with regional produce shippers.' },
+  { year: '2025', event: 'Expanded dispatch operations to 24/7 coverage. Added Midwest and Great Lakes freight lanes.' },
+  { year: '2026', event: 'Fleet modernization with new Kenworth T680 tractors and upgraded Thermo King units — now operating across all 48 contiguous states.' },
 ]
 
 export default function AboutPage() {
@@ -48,7 +47,7 @@ export default function AboutPage() {
                 We operate 53' refrigerated trailers out of our Silver Spring, MD headquarters, with strong freight lanes across the East Coast, Texas, and the Midwest. Our team is small by design — which means every customer and every driver gets real attention, not just a ticket number.
               </p>
               <div className="about-stats">
-                {[{ num: '48+', label: 'States Served' }, { num: '5+', label: 'Years Operating' }, { num: '24/7', label: 'Dispatch' }].map(({ num, label }) => (
+                {[{ num: '48+', label: 'States Served' }, { num: '4+', label: 'Years Operating' }, { num: '24/7', label: 'Dispatch' }].map(({ num, label }) => (
                   <div key={label}>
                     <div className="about-stat-num">{num}</div>
                     <div className="about-stat-label">{label}</div>
