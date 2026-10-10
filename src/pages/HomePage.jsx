@@ -162,7 +162,7 @@ export default function HomePage() {
                   <Link to="/coverage" className="btn btn-primary" style={{ marginTop: 16 }}>View Coverage Map <span className="service-link-arrow">→</span></Link>
                 </div>
                 <div className="map-card">
-                  <img src="/images/royal-coverage-map.svg" alt="Royal Express Nationwide Coverage Map" className="map-svg-element" loading="lazy" />
+                  <img src="/images/map.png" alt="Royal Express Nationwide Coverage Map" className="map-svg-element" loading="lazy" />
                   <div className="map-card-footer">
                     <div className="map-legend">
                       <div className="legend-item"><span className="legend-star" /><span>HQ — Silver Spring, MD</span></div>

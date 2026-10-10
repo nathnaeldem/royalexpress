@@ -53,7 +53,7 @@ export default function CoveragePage() {
             <p className="section-subtitle">Our Silver Spring, MD headquarters anchors routes across the entire continental U.S.</p>
           </div>
           <div className="map-panel">
-            <img src="/images/royal-coverage-map.svg" alt="Royal Express Nationwide Coverage Map" className="map-panel-img" />
+            <img src="/images/map.png" alt="Royal Express Nationwide Coverage Map" className="map-panel-img" />
             <div className="map-panel-legend">
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ width: 12, height: 12, background: 'var(--color-primary)', borderRadius: '50%', boxShadow: '0 0 6px rgba(229,27,36,0.8)', display: 'inline-block' }} />

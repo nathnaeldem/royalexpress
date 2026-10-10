@@ -26,7 +26,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <svg className="contact-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  <a href="mailto:royalexpressllc@mail.com">royalexpressllc@mail.com</a>
+                  <a href="mailto:team@royalexpressllc.com">team@royalexpressllc.com</a>
                 </li>
                 <li>
                   <svg className="contact-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -63,7 +63,7 @@ export default function Footer() {
               <ul className="footer-links">
                 <li><Link to="/contact">Request a Quote</Link></li>
                 <li><a href="tel:6824073621">Call Dispatch</a></li>
-                <li><a href="mailto:royalexpressllc@mail.com">Email Us</a></li>
+                <li><a href="mailto:team@royalexpressllc.com">Email Us</a></li>
               </ul>
               <div style={{ marginTop: 24 }}>
                 <Link to="/contact" className="btn btn-primary btn-sm">Get a Quote →</Link>
