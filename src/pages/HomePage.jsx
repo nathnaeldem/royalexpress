@@ -202,7 +202,7 @@ export default function HomePage() {
                   <h2 className="quote-title">Get a Freight Quote</h2>
                   <p className="quote-subtitle">Send us your load details and we'll get back to you quickly.</p>
                 </div>
-                <QuoteForm />
+                <QuoteForm source="Home Page Quote Form" />
               </div>
             </div>
           </div>
